@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav box</title>
+    <style>
+
+        *{box-sizing: border-box;}
+
+    .main {
+        border: 1px solid;
+        padding: 15px;
+        text-align: center;
+
+    }
+
+    .top-part {
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid;
+    position: relative;
+}
+
+.top-part ul li {
+    list-style: none;
+    display: inline;
+    background-color: coral;
+    padding: 15px;
+    margin: 0px 10px;
+    border: 1px solid;
+}
+
+
+.top-part ul li:hover .box{ visibility: visible;}
+
+    .box {
+        margin: 20px 10px;
+        padding: 0px;
+        border: 1px solid red;
+        display: flex;
+        visibility: hidden;
+        background-color: lightcyan;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 100%;
+    }
+
+    .box .card {
+        margin: 0px;
+        padding: 0px;
+        border: 2px solid green;
+        width: 25%;
+        height: 400px;
+        position: relative;
+    }
+
+    .box .card .top {
+        height: 260px;
+        border: 2px solid pink;
+        /* position: relative;
+         */
+    }
+
+    .box .card .top .view {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: grey;
+        padding: 5px;
+        width: 100%;
+        height: 50px;
+        opacity: 0;
+        transition: 1s;
+        
+    }
+
+    .box .card:hover .view{
+        opacity: 1;
+        top:210px;
+        
+    }
+
+    .box .card .top .front {
+        height: inherit;
+            width: inherit;
+            background-color: pink;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: rotateY(180deg);
+            transition: 1s;
+            backface-visibility: hidden;
+    }
+
+    .box .card .top .back {
+        height: inherit;
+            width: inherit;
+            background-color: purple;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform: rotateY(0deg);
+            transition: 1s;
+            backface-visibility: hidden;
+    }
+
+    .box .card .top:hover .front { transform: rotateY(0deg);}
+
+    .box .card .top:hover .back { transform: rotateY(180deg);}
+
+    .box .card .btm {
+        height: 140px;
+        border: 2px solid pink;
+        text-align: center;
+    }
+
+    .box .card .btm .btn {
+            
+            height: 60px;
+            width: 150px;
+            background: lightblue;
+            line-height: 60px;
+            position: relative;
+            z-index: 0;
+            display: inline-block;
+        }
+
+        .box .card .btm .btn a{
+
+            text-decoration: none;
+            color: rgb(10, 91, 118);
+            text-transform: uppercase;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .box .card .btm .btn-hover {
+            
+            height: 60px;
+            width: 150px;
+            background:transparent;
+            border: 3px solid lightblue;
+            position: absolute ;
+            top: 0 ;
+            left:0;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .box .card .btm .btn:hover .btn-hover {
+
+            height: 80px;
+            width: 170px;
+            transform: translate(-10px,-10px);
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>New Arrival</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, nesciunt dolorem tempore esse quasi vo</p>
+
+
+        <div class="top-part">
+            <ul>
+                <li>Men's
+                    <div class="box">
+                        <div class="card">
+                            <div class="top">
+                                <div class="front"><p>kajdhjahdjkhfdskjghdjkfhd</p></div>
+                                <div class="back"><img src="CSS/car.jpeg" width="100%" height="100%"></div>
+                                <div class="view">
+                                    <p>Quick view</p>
+                                </div>
+                            </div>
+                            <div class="btm">
+                                <h3>info</h3>
+                                <div class="btn">
+                                    <a href="#">Add to cart</a>
+                                    <div class="btn-hover"></div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                </li>
+                <li>Women's
+
+                    <div class="box">
+                        <div class="card">
+                            <div class="top">
+                                <div class="front"><p>kajdhjahdjkhfdskjghdjkfhd</p></div>
+                                <div class="back"><img src="CSS/nature.jpg" width="100%" height="100%"></div>
+                                <div class="view">
+                                    <p>Quick view</p>
+                                </div>
+                            </div>
+                            <div class="btm">
+                                <h3>info</h3>
+                                <div class="btn">
+                                    <a href="#">Add to cart</a>
+                                    <div class="btn-hover"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li>Bags</li>
+                <li>Footwear</li>
+                
+            </ul>
+
+
+            
+        </div>
+
+
+       
+
+
+    </div>
+    
+    
+</body>
+</html>
